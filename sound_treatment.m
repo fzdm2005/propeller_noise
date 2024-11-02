@@ -1,4 +1,4 @@
-[y,Fs] = audioread('data2.wav');
+[y,Fs] = audioread('caliberat_yeti.wav');
 [P1,f]=Sound_fft(y,Fs);
 P = P_cal(P1);
 spl = spl_air(P);

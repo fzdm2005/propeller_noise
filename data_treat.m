@@ -1,4 +1,4 @@
-% load_path = 'result_baselineV8\Beta135\';
+%load_path = 'result_baselineV8\Beta135\';
 % %load_path = 'result_swept30_V8_2\Beta135\';
 % load_filename = 'SoundMeasurement_rpm_4500_Beta135.mat';
 % load([load_path,load_filename]);
@@ -12,11 +12,11 @@ end
 load([path,file]);
 datas = datas(1:Frequency*100);
 len = length(datas);
-dur = 4;
+dur = 4;% duration of each step
 slope = 0.045;
 steps =len/Frequency/dur;
 num_row = dur*Frequency;
- % duration of each step
+ 
 
 data_cal = reshape(datas,num_row,steps);
 P_step = zeros(num_row/2+1, steps);
@@ -35,5 +35,5 @@ xlabel('f (Hz)')
 ylabel('Sound Pressure Level (dB)')
 hold on
 axis([2,200,-20,80])
-%axis([20,1e5,-20,80])
+%axis([20,1e5,0,80])
 set(gca, 'XScale', 'log')
